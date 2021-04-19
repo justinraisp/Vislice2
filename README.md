@@ -4,7 +4,6 @@
 
 * Justin Raišp
 * Anja Petković
-* Anže Palčič
 
 ## Opis
 
