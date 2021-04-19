@@ -4,7 +4,6 @@
 
 * Justin Raišp
 * Anja Petković
-* Matija Pretnar
 
 ## Opis
 
