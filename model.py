@@ -7,6 +7,8 @@ NAPACNA_CRKA = '-'
 ZMAGA = 'W'
 PORAZ = 'X'
 
+ZACETEK = 'Z'
+
 
 class Igra:
 
@@ -76,7 +78,7 @@ class Igra:
                 return NAPACNA_CRKA
 
 
-with open('Vislice/besede.txt', 'r') as f:
+with open('besede.txt', 'r') as f:
     bazen_besed = [beseda.strip().upper() for beseda in f.readlines()]
 
 
@@ -85,6 +87,32 @@ with open('Vislice/besede.txt', 'r') as f:
 def nova_igra():
     geslo = random.choice(bazen_besed)
     return Igra(geslo, [])
+
+
+
+
+class Vislice:
+
+    def __init__(self):
+        self.igre = {}
+
+
+    def prost_id_igre(self):
+        if len(self.igre) == 0:
+            return 0
+        else:
+            return max(self.igre.keys()) + 1
+
+    def nova_igra(self):
+        id_igre = self.prost_id_igre()
+        igra = nova_igra()
+        self.igre[id_igre] = (igra, ZACETEK)
+        return id_igre
+    
+    def ugibaj(self, id_igre, crka):
+        igra, _ = self.igre[id_igre]
+        stanje = igra.ugibaj(crka)
+        self.igre[id_igre] = (igra, stanje)
 
 
 #testno_geslo = 'DEŽUJE'

@@ -82,7 +82,7 @@ def pozeni_vmesnik():
 pozeni_vmesnik()
 
 
-stopnje =
+#stopnje =
 '''
 
 
